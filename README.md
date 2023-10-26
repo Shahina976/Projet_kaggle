@@ -6,9 +6,6 @@ Authors:
 
 Master 2 Bio-informatics at *Univerité de Paris*.
 
-##  Path to documents 
-- Report: ``
-- Oral presentation: ``
 
 ## Context
 
