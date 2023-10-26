@@ -13,16 +13,16 @@ def create_model(input_shape):
         Sequential: Un modèle Keras basé sur Conv1D.
     """
     model = Sequential()
-    model.add(Conv1D(filters=32, kernel_size=3, activation='relu', input_shape=input_shape))
-    model.add(MaxPooling1D(pool_size=2))
-    model.add(Conv1D(filters=32, kernel_size=3, activation='relu'))
-    model.add(MaxPooling1D(pool_size=2))
-    model.add(Flatten())
-    model.add(Dense(32, activation='relu'))
+    # 1D Convolutional layers
+    model.add(layers.Conv1D(filters=64, kernel_size=3, activation='relu', input_shape=input_shape))
+    model.add(layers.MaxPooling1D(pool_size=2))
+    # Dense layer
+    model.add(layers.Dense(64, activation='relu'))
     model.add(Dropout(0.5))
-    model.add(Dense(1, activation='sigmoid'))  # Assumer une sortie binaire
-    
+    # TimeDistributed Output layer
+    model.add(TimeDistributed(layers.Dense(WINDOW_SIZE, activation='sigmoid')))
+
     optimizer = Adam(learning_rate=0.000001)
     model.compile(optimizer=optimizer, loss='binary_crossentropy', metrics=['accuracy'])
-    
+
     return model
