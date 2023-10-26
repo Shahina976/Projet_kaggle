@@ -50,7 +50,7 @@ test.py: With the trained model in place, this script takes it as input and retu
 
 xy_data_sw.py: Given the time-series nature of our data, this script preprocesses it by creating a dataset with a sliding window approach. It ensures that the data is appropriately structured to capture the temporal patterns.
 
-- src Model:
+- model Directory:
 Inside the model directory, we've organized various neural network architectures that were implemented during our project. Each folder corresponds to a specific model type, and here's what they contain:
 
 CNN: Contains scripts and files related to the Convolutional Neural Network model.
