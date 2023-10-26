@@ -36,4 +36,30 @@ In our group's effort to address the challenges of the Kaggle project, we've tho
 - Bi-LSTM (Bidirectional LSTM): By processing data from both past-to-future and future-to-past directions, Bi-LSTM provides a richer representation and often yields improved performance, especially when the context from both directions is crucial.
 
 
+## Usage of Scripts
+Our repository is organized to provide a streamlined workflow for data preprocessing, training, and testing. The primary scripts and their functionalities are outlined below:
+
+- src Directory:
+data_processing.py: This script is responsible for cleaning the dataset. It removes any missing values (NA) and preprocesses the data to make it suitable for modeling.
+
+data_split.py: Utilizing this script will partition the dataset into training (data_train) and testing (data_test) subsets, ensuring that the data is ready for model training and evaluation.
+
+train.py: Once your data is preprocessed and split, you can use this script to train the desired neural network model. The trained model will be saved for further use.
+
+test.py: With the trained model in place, this script takes it as input and returns predictions for the data_test. This allows us to evaluate the model's performance on unseen data.
+
+xy_data_sw.py: Given the time-series nature of our data, this script preprocesses it by creating a dataset with a sliding window approach. It ensures that the data is appropriately structured to capture the temporal patterns.
+
+- src Model:
+Inside the model directory, we've organized various neural network architectures that were implemented during our project. Each folder corresponds to a specific model type, and here's what they contain:
+
+CNN: Contains scripts and files related to the Convolutional Neural Network model.
+
+LSTM: Dedicated to the Long Short-Term Memory model and its associated files.
+
+CNN_LSTM: Here, you'll find the combined Convolutional Neural Network and Long Short-Term Memory model files.
+
+GRU: This directory is a bit special. It houses three different .py scripts, each tailored to create a unique variation of the Gated Recurrent Unit model.
+
+
 
